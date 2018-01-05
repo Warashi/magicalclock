@@ -8,9 +8,9 @@ type Clock interface {
 	Apply(hour, minute, second int) (h, m, s int)
 }
 
-func New(length int) Clock {
-	return clock(length)
 // New の引数には一日を何時間に設定するかを指定
+func New(HoursOfOneDay int) Clock {
+	return clock(HoursOfOneDay)
 }
 
 func (c clock) Apply(h, m, s int) (hour, minute, second int) {
