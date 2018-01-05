@@ -26,6 +26,9 @@ func main() {
 	t := time.Now().Local()
 	_, M, D := t.Date()
 	W := JapaneseWeekDay(t.Weekday())
-	h, m, _ := magicalclock.New(dayLength).Apply(t.Clock())
+	oh, om, os := t.Clock()
+	h, m, _ := magicalclock.New(dayLength).Apply(oh, om, os)
 	fmt.Printf("%d月%d日(%s) %02d:%02d\n", M, D, W, h, m)
+	fmt.Println("---")
+	fmt.Printf("%02d:%02d\n", oh, om)
 }
