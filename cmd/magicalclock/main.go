@@ -9,5 +9,5 @@ import (
 
 func main() {
 	h, m, _ := magicalclock.New(dayLength).Apply(time.Now().Local().Clock())
-	fmt.Printf("%d:%d\n", h, m)
+	fmt.Printf("%02d:%02d\n", h, m)
 }
